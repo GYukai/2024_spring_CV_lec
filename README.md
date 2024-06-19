@@ -76,7 +76,7 @@ python data_wash.py
 python build_coco.py
 ```
 
-或者也可以从链接下载后将 test.json 和 train.json 放到 BJTU_washed 目录下
+或者也可以从链接下载 [test.json](https://www.dropbox.com/scl/fi/xe8sheuh3zl3wg5vskakb/test.json?rlkey=9brzi5tnrpfy89420cploleff&st=mcw8dcvu&dl=0)  ,[train.json](https://www.dropbox.com/scl/fi/74b6b2qjqrxc08w0ms7au/train.json?rlkey=i4aufpjzzeduayvb5bvx44zrj&st=r85p8ov2&dl=0)，下载后放到 BJTU_washed 目录下
 
 
 ### RCTW
@@ -92,7 +92,9 @@ RCTW_17/
     rctw_train.json
 ```
 
-COCO格式的json可以自己生成，也可以直接从我提供的地址下载
+COCO格式的json可以自己生成，也可以直接从我提供的地址下载 [rctw_train.json](https://www.dropbox.com/scl/fi/ptgzo7tfddzl5veg0lr26/rctw_train.json?rlkey=t2m7bck4qz4ycty1mu95aifyu&st=xciqkqze&dl=0) 
+
+
 
 ## 其他文件
 
