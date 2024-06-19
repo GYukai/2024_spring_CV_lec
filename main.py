@@ -1,6 +1,6 @@
 import detectron2
 from detectron2.utils.logger import setup_logger
-
+import argparse
 setup_logger()
 from detectron2.evaluation import COCOEvaluator, inference_on_dataset
 from detectron2.data import build_detection_test_loader
@@ -25,15 +25,18 @@ from dataset_bjtu import *
 import torch
 from detectron2.engine import DefaultTrainer
 from transform import *
-'''
-Usage: 手动改cfg路径，运行时指定CUDA_VISIBLE_DEVICES
-'''
+
+
+parser = argparse.ArgumentParser(description="Detectron2 Training Script")
+parser.add_argument('--cfg', required=True, help='Path to the config file')
+args = parser.parse_args()
+
 
 # print(torch.cuda.is_available())
 # print(torch.cuda.get_device_capability())
 
 
-CFG = "config/dev_1.yaml"
+CFG = args.cfg
 # CFG = "config/hit.yaml"
 
 train_dataset = None
@@ -99,17 +102,6 @@ class CocoTrainer(DefaultTrainer):
 
         return build_detection_train_loader(cfg, mapper=mapper)
     
-    # @classmethod
-    # def build_test_loader(cls, cfg, dataset_name):
-    #     return build_detection_test_loader(cfg, dataset_name, mapper=DatasetMapper(cfg, is_train=False, augmentations=build_text_detect_val_aug(cfg)))
-
-    # @classmethod
-    # def build_lr_scheduler(cls, cfg, optimizer):
-    #     """
-    #     It now calls :func:`detectron2.solver.build_lr_scheduler`.
-    #     Overwrite it if you'd like a different scheduler.
-    #     """
-    #     return build_lr_scheduler(cfg, optimizer)
 
 
 cfg = get_cfg()
