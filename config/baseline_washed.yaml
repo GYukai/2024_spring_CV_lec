@@ -1,0 +1,5 @@
+_BASE_: "baseline.yaml"
+DATASETS:
+  TRAIN: ("bjtu_train_washed",)
+  TEST: ["bjtu_test_washed"]
+OUTPUT_DIR: result/baseline_faster_r50_b16_s250_washed

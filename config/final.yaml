@@ -1,0 +1,27 @@
+_BASE_: "faster_rcnn_R_50_FPN_3x.yaml"
+DATASETS:
+  TRAIN: ("bjtu_train_washed",)
+  TEST: ["bjtu_test_washed"]
+OUTPUT_DIR: result/final_r50_b4_s3000_rc3
+MODEL:
+  WEIGHTS: pretrained/model_final.pth
+  ROI_HEADS:
+    BATCH_SIZE_PER_IMAGE: 256
+    NUM_CLASSES: 6
+SOLVER:
+  IMS_PER_BATCH: 4
+  BASE_LR: 8e-3
+  BASE_LR_END: 5e-4
+  LR_SCHEDULER_NAME: WarmupCosineLR
+  MAX_ITER: 5000
+  CHECKPOINT_PERIOD: 300
+  STEPS: [1000]
+TEST:
+  EVAL_PERIOD: 300
+INPUT:
+  RANDOM_FLIP: none
+  CROP: 
+    ENABLED: true
+    TYPE: relative_range
+    SIZE: [0.7, 0.7]
+

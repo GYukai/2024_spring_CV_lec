@@ -1,0 +1,7 @@
+_BASE_: "baseline_washed.yaml"
+SOLVER:
+  MAX_ITER: 1250
+TEST:
+  EVAL_PERIOD: 50
+OUTPUT_DIR: result/baseline_faster_r50_b16_s1000_washed
+
